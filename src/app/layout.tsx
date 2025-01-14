@@ -24,10 +24,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* layout for side panel (common to all pages) */}
+        <div className="h-screen border border-green-500 flex">
+          {/* Side Panel */}
+          <div className="w-1/4 border border-blue-800 flex flex-col gap-4">
+
+              
+
+          </div>
+          <main className="border border-orange-300 flex-1">{children}</main>
+        </div>
       </body>
     </html>
   );
