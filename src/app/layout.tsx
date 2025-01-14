@@ -29,9 +29,9 @@ export default function RootLayout({
       {/* <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}> */}
       <body className="font-sans">
         {/* layout for side panel (common to all pages) */}
-        <div className="h-screen border border-green-500 flex">
+        <div className="h-screen flex">
           {/* Side Panel */}
-          <div className="w-1/5 border border-blue-800 flex flex-col gap-4 py-2 px-4">
+          <div className="w-1/5 border border-blue-800 flex flex-col gap-4 py-2 px-4 pb-6">
 
             {/* User Box */}
             <div className="flex gap-2 items-center">
@@ -56,8 +56,9 @@ export default function RootLayout({
               <SidePanelTabs value="Settings" iconProps={{ iconSrc: "settings.svg", width: 15, height: 14, alt: "Home Icon" }} />
             </div>
             {/* Help and Support */}
+            <p className="mt-auto">Help & Support</p>
           </div>
-          <main className="border border-orange-300 flex-1">{children}</main>
+          <main className="flex-1">{children}</main>
         </div>
       </body>
     </html>

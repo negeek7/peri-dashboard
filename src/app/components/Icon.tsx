@@ -10,7 +10,7 @@ export interface IconArgs {
     iconClass?: string,
 }
 
-export default function Icon({ iconSrc, width = 14, height = 14, alt = "Icon", iconClass=""}: IconArgs) {
+export default function Icon({ iconSrc, width = 14, height = 14, alt = "Icon", iconClass = "" }: IconArgs) {
 
     if (!iconSrc) {
         throw new Error("iconSrc is required for Icon components");
@@ -23,7 +23,7 @@ export default function Icon({ iconSrc, width = 14, height = 14, alt = "Icon", i
             src={iconSrc}
             width={width}
             height={height}
-            className={iconClass}
+            className="hover:text-red-500"
         />
     )
 
