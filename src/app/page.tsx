@@ -111,15 +111,20 @@ export default async function Home() {
   ]
 
 
+  let { data: groups, error } = await supabase
+    .from('groups')
+    .select('*')
 
-  const data = await supabase.from("groups").select();
-  console.log(data,"ADARTDATAAAAAA")
 
-  console.log()
+  if (error) {
+    throw new Error("Supabase could not fetch data");
+  }
+
+  console.log(groups, "groupsgroupsgroups")
 
   return (
     <div className="flex flex-row h-screen">
-      <div  className="w-3/4 ">
+      <div className="w-3/4 ">
         <GroupsTable mockData={mockData} />
       </div>
       {/* Right Info Panel */}
