@@ -1,11 +1,11 @@
 import React from 'react';
-import { MockData } from '../page';
+import { GroupData } from '../page';
 
 interface GroupsTableProps {
-    mockData: MockData[];
+    groupData: GroupData[];
 }
 
-export default function GroupsTable({ mockData }: GroupsTableProps) {
+export default function GroupsTable({ groupData }: GroupsTableProps) {
 
     return (
         <div className="container mx-auto h-full">
@@ -21,15 +21,15 @@ export default function GroupsTable({ mockData }: GroupsTableProps) {
                         </tr>
                     </thead>
                     <tbody>
-                        {mockData.map((row, index) => (
+                        {groupData.map((row, index) => (
                             <tr
                                 key={index}
                                 className="bg-white hover:bg-gray-100 cursor-pointer"
                             >
-                                <td className="px-4 py-2 text-sm">{row.groupName}</td>
-                                <td className="px-4 py-2 text-xs"><span className="border-transparent bg-blue-100 rounded-xl p-1 px-2 text-blue-700 font-bold"># {row.project}</span></td>
+                                <td className="px-4 py-2 text-sm">{row.group_name}</td>
+                                <td className="px-4 py-2 text-xs"><span className="border-transparent bg-blue-100 rounded-xl p-1 px-2 text-blue-700 font-bold"># {row.project_type}</span></td>
                                 <td className="px-4 py-2 text-sm">
-                                    {row.labels.map((label, i) => (
+                                    {row.labels && row.labels.map((label, i) => (
                                         <span
                                             key={i}
                                             className={`inline-block px-2 py-1 text-xs font-medium rounded ${label === "High Priority"
@@ -47,7 +47,7 @@ export default function GroupsTable({ mockData }: GroupsTableProps) {
                                     ))}
                                 </td>
                                 <td className="px-4 py-2 text-sm">{row.members}</td>
-                                <td className="px-4 py-2 text-sm">{row.lastActive}</td>
+                                <td className="px-4 py-2 text-sm">{row.last_active}</td>
                             </tr>
                         ))}
                     </tbody>
