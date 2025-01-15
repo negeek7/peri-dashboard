@@ -8,9 +8,9 @@ interface GroupsTableProps {
 export default function GroupsTable({ mockData }: GroupsTableProps) {
 
     return (
-        <div className="container mx-auto h-full border border-pink-950">
+        <div className="container mx-auto h-full">
             <div className="overflow-x-auto">
-                <table className="min-w-full border bg-white rounded-lg h-full">
+                <table className="min-w-full bg-white rounded-lg h-full">
                     <thead className="bg-white">
                         <tr>
                             <th className="px-4 py-2 text-left text-sm font-medium">Group Name</th>

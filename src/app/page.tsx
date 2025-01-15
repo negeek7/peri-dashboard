@@ -1,5 +1,6 @@
 import Image from "next/image";
 import GroupsTable from "./components/GroupsTable";
+import { supabase } from "@/utils/supabase/supabaseClient";
 
 
 
@@ -13,7 +14,7 @@ export interface MockData {
   lastActive: string,
 }
 
-export default function Home() {
+export default async function Home() {
 
   const mockData = [
     {
@@ -109,13 +110,20 @@ export default function Home() {
     }
   ]
 
+
+
+  const data = await supabase.from("groups").select();
+  console.log(data,"ADARTDATAAAAAA")
+
+  console.log()
+
   return (
-    <div className="flex flex-row border h-screen">
-      <div  className="border border-red-500 w-3/4 ">
+    <div className="flex flex-row h-screen">
+      <div  className="w-3/4 ">
         <GroupsTable mockData={mockData} />
       </div>
       {/* Right Info Panel */}
-      <div className="border-2 border-green-500 flex-1">
+      <div className="border flex-1">
 
       </div>
     </div>
