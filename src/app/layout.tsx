@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Icon from "./components/Icon";
 import SidePanelTabs from "./components/SidePanelTabs";
+import SidePanel from "./components/SidePanel";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,36 +29,8 @@ export default function RootLayout({
     <html lang="en">
       {/* <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}> */}
       <body className="font-sans">
-        {/* layout for side panel (common to all pages) */}
-        <div className="h-screen flex">
-          {/* Side Panel */}
-          <div className="w-1/5 border border-blue-800 flex flex-col gap-4 py-2 px-4 pb-6">
-
-            {/* User Box */}
-            <div className="flex gap-2 items-center">
-              {/* user icon*/}
-              <div className="border-transparent bg-green-700 rounded-xl w-7 h-7"></div>
-              {/* user name and mail */}
-              <div className="flex flex-col justify-center text-sm">
-                <p className="font-semibold">Periskope</p>
-                <p className="text-gray-400 text-xs">negeek@hashlabs.dev</p>
-              </div>
-              {/* account toggle */}
-            </div>
-
-            {/* Tabs Options */}
-            <div className="flex flex-col gap-2 font-medium font-sans">
-              <SidePanelTabs value="Home" iconProps={{ iconSrc: "home.svg", width: 15, height: 14, alt: "Home Icon" }} />
-              <SidePanelTabs value="Chats" iconProps={{ iconSrc: "chat.svg", width: 15, height: 14, alt: "Home Icon" }} />
-              <SidePanelTabs value="Groups" iconProps={{ iconSrc: "contacts.svg", width: 15, height: 14, alt: "Home Icon" }} />
-              <SidePanelTabs value="Contacts" iconProps={{ iconSrc: "contacts.svg", width: 15, height: 14, alt: "Home Icon" }} />
-              <SidePanelTabs value="Logs" iconProps={{ iconSrc: "bell.svg", width: 15, height: 14, alt: "Home Icon" }} />
-              <SidePanelTabs value="Files" iconProps={{ iconSrc: "file.svg", width: 15, height: 14, alt: "Home Icon" }} />
-              <SidePanelTabs value="Settings" iconProps={{ iconSrc: "settings.svg", width: 15, height: 14, alt: "Home Icon" }} />
-            </div>
-            {/* Help and Support */}
-            <p className="mt-auto">Help & Support</p>
-          </div>
+        <div className="min-h-screen flex">
+          <SidePanel />
           <main className="flex-1">{children}</main>
         </div>
       </body>
