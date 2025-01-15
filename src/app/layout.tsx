@@ -4,6 +4,7 @@ import "./globals.css";
 import Icon from "./components/Icon";
 import SidePanelTabs from "./components/SidePanelTabs";
 import SidePanel from "./components/SidePanel";
+import NavBar from "./components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,9 +30,14 @@ export default function RootLayout({
     <html lang="en">
       {/* <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}> */}
       <body className="font-sans">
-        <div className="min-h-screen flex border border-blue-800">
+        <div className="min-h-screen flex flex-row border border-blue-800">
           <SidePanel />
-          <main className="flex-1">{children}</main>
+
+          
+          <div className="border border-red-500 flex-1">
+            <NavBar />
+            <main className="flex-1">{children}</main>
+            </div>
         </div>
       </body>
     </html>
