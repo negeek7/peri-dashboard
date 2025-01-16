@@ -13,7 +13,7 @@ export interface GroupData {
 
 export default async function Home() {
 
-  let { data: groups, error } = await supabase
+  const { data: groups, error } = await supabase
     .from('groups')
     .select('*')
 
@@ -24,14 +24,13 @@ export default async function Home() {
   }
 
   return (
-    <div className="flex flex-row h-screen">
+    <div className="flex flex-row h-full">
 
       {/* Main screen display */}
       <div className="w-3/4">
         <GroupsTable groupData={groups!} />
       </div>
-
-
+      
       {/* Right Info Panel */}
       <div className="border border-green-900 flex-1">
 

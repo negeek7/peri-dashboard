@@ -7,52 +7,190 @@ interface GroupsTableProps {
 
 export default function GroupsTable({ groupData }: GroupsTableProps) {
 
+    console.log(groupData, "groupDatagroupData")
+
     return (
-        <div className="container mx-auto h-full">
-            <div className="overflow-x-auto">
-                <table className="min-w-full bg-white rounded-lg h-full">
-                    <thead className="bg-white">
-                        <tr>
-                            <th className="px-4 py-2 text-left text-sm font-medium">Group Name</th>
-                            <th className="px-4 py-2 text-left text-sm font-medium">Project</th>
-                            <th className="px-4 py-2 text-left text-sm font-medium">Labels</th>
-                            <th className="px-4 py-2 text-left text-sm font-medium">Members</th>
-                            <th className="px-4 py-2 text-left text-sm font-medium">Last Active</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {groupData.map((row, index) => (
-                            <tr
-                                key={index}
-                                className="bg-white hover:bg-gray-100 cursor-pointer"
-                            >
-                                <td className="px-4 py-2 text-sm">{row.group_name}</td>
-                                <td className="px-4 py-2 text-xs"><span className="border-transparent bg-blue-100 rounded-xl p-1 px-2 text-blue-700 font-bold"># {row.project_type}</span></td>
-                                <td className="px-4 py-2 text-sm">
-                                    {row.labels && row.labels.map((label, i) => (
-                                        <span
-                                            key={i}
-                                            className={`inline-block px-2 py-1 text-xs font-medium rounded ${label === "High Priority"
-                                                    ? "bg-red-100 text-red-700"
-                                                    : label === "Pilot"
-                                                        ? "bg-purple-100 text-purple-700"
-                                                        : label === "Priority"
-                                                            ? "bg-green-100 text-green-700"
-                                                            : "bg-gray-200"
-                                                }`}
-                                            style={{ marginRight: "4px" }}
-                                        >
-                                            {label}
-                                        </span>
-                                    ))}
-                                </td>
-                                <td className="px-4 py-2 text-sm">{row.members}</td>
-                                <td className="px-4 py-2 text-sm">{row.last_active}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+        <div className="group-table-container relative flex flex-col w-full h-full text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
+            <table className="group-table w-full h-full text-left table-auto min-w-max">
+            <thead className="flex-none">
+                    <tr>
+                        <th className="p-4 border-b border-slate-300 bg-slate-50">
+                            <p className="block text-sm font-normal leading-none text-slate-500">
+                                Name
+                            </p>
+                        </th>
+                        <th className="p-4 border-b border-slate-300 bg-slate-50">
+                            <p className="block text-sm font-normal leading-none text-slate-500">
+                                Job
+                            </p>
+                        </th>
+                        <th className="p-4 border-b border-slate-300 bg-slate-50">
+                            <p className="block text-sm font-normal leading-none text-slate-500">
+                                Employed
+                            </p>
+                        </th>
+                        <th className="p-4 border-b border-slate-300 bg-slate-50">
+                            <p className="block text-sm font-normal leading-none text-slate-500"></p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody className="overflow-scroll">  
+                    <tr className="hover:bg-slate-50">
+                        <td className="p-4 border-b border-slate-200">
+                            <p className="block text-sm text-slate-800">
+                                John Michael
+                            </p>
+                        </td>
+                        <td className="p-4 border-b border-slate-200">
+                            <p className="block text-sm text-slate-800">
+                                Manager
+                            </p>
+                        </td>
+                        <td className="p-4 border-b border-slate-200">
+                            <p className="block text-sm text-slate-800">
+                                23/04/18
+                            </p>
+                        </td>
+                        <td className="p-4 border-b border-slate-200">
+                            <a href="#" className="block text-sm font-semibold text-slate-800">
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                        <td className="p-4 border-b border-slate-200">
+                            <p className="block text-sm text-slate-800">
+                                Alexa Liras
+                            </p>
+                        </td>
+                        <td className="p-4 border-b border-slate-200">
+                            <p className="block text-sm text-slate-800">
+                                Developer
+                            </p>
+                        </td>
+                        <td className="p-4 border-b border-slate-200">
+                            <p className="block text-sm text-slate-800">
+                                23/04/18
+                            </p>
+                        </td>
+                        <td className="p-4 border-b border-slate-200">
+                            <a href="#" className="block text-sm font-semibold text-slate-800">
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                        <td className="p-4 border-b border-slate-200">
+                            <p className="block text-sm text-slate-800">
+                                Laurent Perrier
+                            </p>
+                        </td>
+                        <td className="p-4 border-b border-slate-200">
+                            <p className="block text-sm text-slate-800">
+                                Executive
+                            </p>
+                        </td>
+                        <td className="p-4 border-b border-slate-200">
+                            <p className="block text-sm text-slate-800">
+                                19/09/17
+                            </p>
+                        </td>
+                        <td className="p-4 border-b border-slate-200">
+                            <a href="#" className="block text-sm font-semibold text-slate-800">
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                        <td className="p-4 border-b border-slate-200">
+                            <p className="block text-sm text-slate-800">
+                                Michael Levi
+                            </p>
+                        </td>
+                        <td className="p-4 border-b border-slate-200">
+                            <p className="block text-sm text-slate-800">
+                                Developer
+                            </p>
+                        </td>
+                        <td className="p-4 border-b border-slate-200">
+                            <p className="block text-sm text-slate-800">
+                                24/12/08
+                            </p>
+                        </td>
+                        <td className="p-4 border-b border-slate-200">
+                            <a href="#" className="block text-sm font-semibold text-slate-800">
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                        <td className="p-4">
+                            <p className="block text-sm text-slate-800">
+                                Richard Gran
+                            </p>
+                        </td>
+                        <td className="p-4">
+                            <p className="block text-sm text-slate-800">
+                                Manager
+                            </p>
+                        </td>
+                        <td className="p-4">
+                            <p className="block text-sm text-slate-800">
+                                04/10/21
+                            </p>
+                        </td>
+                        <td className="p-4">
+                            <a href="#" className="block text-sm font-semibold text-slate-800">
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                        <td className="p-4">
+                            <p className="block text-sm text-slate-800">
+                                Richard Gran
+                            </p>
+                        </td>
+                        <td className="p-4">
+                            <p className="block text-sm text-slate-800">
+                                Manager
+                            </p>
+                        </td>
+                        <td className="p-4">
+                            <p className="block text-sm text-slate-800">
+                                04/10/21
+                            </p>
+                        </td>
+                        <td className="p-4">
+                            <a href="#" className="block text-sm font-semibold text-slate-800">
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                        <td className="p-4">
+                            <p className="block text-sm text-slate-800">
+                                Richard Gran
+                            </p>
+                        </td>
+                        <td className="p-4">
+                            <p className="block text-sm text-slate-800">
+                                Manager
+                            </p>
+                        </td>
+                        <td className="p-4">
+                            <p className="block text-sm text-slate-800">
+                                04/10/21
+                            </p>
+                        </td>
+                        <td className="p-4">
+                            <a href="#" className="block text-sm font-semibold text-slate-800">
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     );
 

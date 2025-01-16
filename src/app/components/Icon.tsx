@@ -1,4 +1,3 @@
-import { isCustomErrorPage } from 'next/dist/build/utils';
 import Image from 'next/image';
 import React from 'react';
 
@@ -10,7 +9,7 @@ export interface IconArgs {
     iconClass?: string,
 }
 
-export default function Icon({ iconSrc, width = 14, height = 14, alt = "Icon", iconClass = "" }: IconArgs) {
+export default function Icon({ iconSrc, width = 14, height = 14, alt = "Icon",}: IconArgs) {
 
     if (!iconSrc) {
         throw new Error("iconSrc is required for Icon components");

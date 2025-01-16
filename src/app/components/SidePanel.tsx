@@ -1,5 +1,4 @@
 import React from 'react';
-import SidePanelTabs from './SidePanelTabs';
 import Icon from './Icon';
 
 
@@ -15,7 +14,7 @@ const tabsOptions = [
         iconAlt: "Icon"
     },
     {
-        value: 'Gropus',
+        value: 'Groups',
         iconSrc: 'users.svg',
         iconAlt: "Icon"
     },
@@ -44,7 +43,7 @@ const tabsOptions = [
 export default function SidePanel() {
 
     return (
-        <div className="w-1/5 border flex flex-col gap-4 py-2 px-4 pb-6">
+        <div className="border flex flex-col gap-4 py-2 px-4 pb-6">
             <div className="flex gap-2 items-center">
                 <div className="border-transparent bg-green-700 rounded-xl w-7 h-7"></div>
                 <div className="flex flex-col justify-center text-sm">
@@ -56,7 +55,7 @@ export default function SidePanel() {
             <div className="flex flex-col gap-2 font-medium font-sans">
                 {
                     tabsOptions.map((tab, index) => (
-                        <div className="flex flex-row gap-4 items-center border-transparent p-2 group cursor-pointer hover:bg-gray-200 rounded-lg">
+                        <div key={index} className="flex flex-row gap-4 items-center border-transparent p-2 group cursor-pointer hover:bg-gray-200 rounded-lg">
                             <Icon iconSrc={tab.iconSrc} width={14} height={14} alt={tab.iconAlt || "Icon"} iconClass="group-hover:fill-blue-500" />
                             <p className="group-hover:text-green-600">{tab.value}</p>
                         </div>
