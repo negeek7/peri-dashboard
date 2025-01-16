@@ -21,13 +21,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} antialiased`}>
-        <div className="flex flex-row border border-blue-800">
+      <body className={`${geistSans.variable} antialiased relative`}>
+        <div className="flex flex-row border border-blue-800 h-screen">
           <SidePanel />
 
-          <div className="flex-1">
+          <div className="flex-1 flex flex-col border border-yellow-900">
             <NavBar />
-            <main>{children}</main>
+            <main className="h-full">{children}</main>
           </div>
         </div>
       </body>

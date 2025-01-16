@@ -24,15 +24,16 @@ export default async function Home() {
   }
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row border h-full">
 
-      {/* Main screen display */}
-      <div className="w-3/4">
+      
+      <div className="border border-red-500 w-3/4">
         <GroupsTable groupData={groups!} />
       </div>
-      
-      {/* Right Info Panel */}
-      <div className="border flex-1">
+
+
+    {/* Side Panel */}
+      <div>
 
       </div>
     </div>

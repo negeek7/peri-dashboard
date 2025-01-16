@@ -10,37 +10,35 @@ export default function GroupsTable({ groupData }: GroupsTableProps) {
     console.log(groupData, "groupDatagroupData")
 
     return (
-        <div className="h-full flex flex-col">
-            <div className="flex items-center justify-between p-4 bg-white border-b">
+        <div className="h-full flex flex-col relative">
+            <div className="flex items-center justify-between p-4 bg-gray-100 border-b">
                 <div className="flex items-center space-x-2 flex-1">
-                    <div className="relative flex-1 max-w-md">
+                    <div className="relative flex flex-row gap-2 max-w-md">
                         <input
                             type="text"
                             placeholder="Search"
-                            className="w-full pl-10 pr-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-green-500"
+                            className="px-2 py-1 rounded text-xs border focus:outline-none focus:ring-2 focus:ring-green-500"
                         />
+                        <button className="flex items-center px-4 py-1 border rounded-lg text-xs font-semibold text-gray-600 hover:bg-gray-50">
+                            <span>Filter</span>
+                        </button>
                     </div>
-                    <button className="flex items-center space-x-1 px-3 py-2 border rounded-lg text-gray-600 hover:bg-gray-50">
-                        <span>Filter</span>
-                    </button>
                 </div>
                 <div className="flex items-center space-x-2">
-                    <button className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                    <button className="py-1 px-4 bg-green-800 text-white text-sm rounded hover:bg-green-700">
                         Bulk message
                     </button>
-                    <button className="px-4 py-2 border rounded-lg text-gray-600 hover:bg-gray-50">
+                    <button className="py-1 px-4 border bg-white text-gray-700 text-sm rounded hover:bg-gray-50">
                         Group Actions
                     </button>
                 </div>
             </div>
 
-            {/* Table */}
-            <div className="flex-1 overflow-hidden">
-                <div className="overflow-x-auto">
-                    <table className="w-full">
-                        {/* Table Header */}
-                        <thead className="bg-gray-50">
-                            <tr className="text-left text-gray-500">
+            <div className="table-wrp block max-h-96">
+                <table className="w-full">
+                    <thead className="bg-white border-b sticky top-0">
+                        {/* <!-- table head content --> */}
+                        <tr className="text-left text-gray-500">
                                 <th className="sticky top-0 p-4 bg-gray-50">
                                     <input type="checkbox" className="rounded" />
                                 </th>
@@ -50,11 +48,10 @@ export default function GroupsTable({ groupData }: GroupsTableProps) {
                                 <th className="sticky top-0 p-4 bg-gray-50 font-medium">Members</th>
                                 <th className="sticky top-0 p-4 bg-gray-50 font-medium">Last Active</th>
                             </tr>
-                        </thead>
-
-                        {/* Table Body */}
-                        <tbody className="bg-white divide-y">
-                            {groupData.map((row, index) => (
+                    </thead>
+                    <tbody className="h-96 overflow-y-auto">
+                        {/* <!-- table body content --> */}
+                        {groupData.map((row, index) => (
                                 <tr key={index} className="hover:bg-gray-50">
                                     <td className="p-4">
                                         <input type="checkbox" className="rounded" />
@@ -88,13 +85,15 @@ export default function GroupsTable({ groupData }: GroupsTableProps) {
                                     <td className="p-4 text-gray-500">{row.last_active}</td>
                                 </tr>
                             ))}
-                        </tbody>
-                    </table>
-                </div>
+                    </tbody>
+                </table>
             </div>
 
+            {/* Table */}
+
+
             {/* Footer Pagination */}
-            <div className="p-4 border-t bg-white">
+            <div className="py-1 px-2 mt-auto bg-white border border-pink-500">
                 <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-500">1 of 6</span>
                     <div className="flex space-x-2">
