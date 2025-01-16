@@ -15,7 +15,7 @@ export default async function Home() {
 
   const { data: groups, error } = await supabase
     .from('groups')
-    .select('*')
+    .select()
 
   if (error) {
     throw new Error("Supabase could not fetch data");
@@ -24,18 +24,17 @@ export default async function Home() {
   }
 
   return (
-    <div className="flex flex-row border h-full">
+    <>
+    {/* MAIN SCREEN */}
+    <div className="h-full">
+      <GroupsTable groupData={groups!} />
+    </div>
 
-      
-      <div className="border border-red-500 w-3/4">
-        <GroupsTable groupData={groups!} />
-      </div>
-
-
-    {/* Side Panel */}
+      {/* Side Panel */}
       <div>
 
       </div>
-    </div>
+    </>
+
   );
 }

@@ -20,14 +20,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} antialiased relative`}>
-        <div className="flex flex-row border border-blue-800 h-screen">
-          <SidePanel />
+    <html lang="en" className="h-full">
+      <body className="h-full bg-gray-100 antialiased">
+        <div className="flex flex-row h-full">
+          {/* Side Panel */}
+          <SidePanel  />
 
-          <div className="flex-1 flex flex-col border border-yellow-900">
-            <NavBar />
-            <main className="h-full">{children}</main>
+          {/* Main Content */}
+          <div className="flex-1 flex flex-col">
+            <NavBar  />
+            <main className="flex-1 overflow-hidden">{children}</main>
           </div>
         </div>
       </body>

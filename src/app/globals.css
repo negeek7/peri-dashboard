@@ -29,10 +29,3 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
-
-.group-table-container {
-  height: 100vh; 
-}
-
-.group-table {
-}
