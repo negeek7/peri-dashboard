@@ -1,5 +1,6 @@
 import GroupsTable from "./components/GroupsTable";
 import { supabase } from "@/utils/supabase/supabaseClient";
+import InfoPanel from "./components/InfoPanel";
 
 // Main screen (show only groups table for now);
 
@@ -24,17 +25,17 @@ export default async function Home() {
   }
 
   return (
-    <>
-    {/* MAIN SCREEN */}
-    <div className="h-full">
-      <GroupsTable groupData={groups!} />
-    </div>
+    <div className="h-full flex flex-row">
+      {/* MAIN SCREEN */}
+      <div className="h-full w-3/4">
+        <GroupsTable groupData={groups!} />
+      </div>
 
       {/* Side Panel */}
-      <div>
-
+      <div className="flex-1">
+        <InfoPanel group={groups[0]}/>
       </div>
-    </>
+    </div>
 
   );
 }

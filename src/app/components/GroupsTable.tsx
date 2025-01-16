@@ -27,7 +27,10 @@ export default function GroupsTable({ groupData }: GroupsTableProps) {
                 </div>
             </div>
 
-            <div className="flex-1 border table-container relative overflow-y-scroll">
+            <div className="flex-1 border table-container relative overflow-y-scroll [&::-webkit-scrollbar]:w-2
+  [&::-webkit-scrollbar-track]:bg-white
+  [&::-webkit-scrollbar-thumb]:bg-gray-300
+  [&::-webkit-scrollbar-thumb]:rounded-full">
                 <table className="w-full relative">
                     {/* Table Header */}
                     <thead className="bg-white border-b sticky top-0 z-10">
@@ -46,7 +49,7 @@ export default function GroupsTable({ groupData }: GroupsTableProps) {
 
                     <tbody className="bg-white">
                         {groupData.length && groupData.map((row, index) => (
-                            <tr key={index} className="hover:bg-gray-100 text-gray-600 text-sm font-medium">
+                            <tr key={index} className="hover:bg-gray-100 text-gray-600 text-sm font-medium cursor-pointer">
                                 <td className="px-4 py-3">
                                     <input type="checkbox" className="rounded" />
                                 </td>
