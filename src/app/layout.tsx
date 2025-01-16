@@ -22,9 +22,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} antialiased`}>
-        <div className="min-h-screen flex flex-row border border-blue-800">
+        <div className="flex flex-row border border-blue-800">
           <SidePanel />
-
 
           <div className="flex-1">
             <NavBar />

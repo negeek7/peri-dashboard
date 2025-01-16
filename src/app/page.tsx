@@ -24,7 +24,7 @@ export default async function Home() {
   }
 
   return (
-    <div className="flex flex-row h-full">
+    <div className="flex flex-row">
 
       {/* Main screen display */}
       <div className="w-3/4">
@@ -32,7 +32,7 @@ export default async function Home() {
       </div>
       
       {/* Right Info Panel */}
-      <div className="border border-green-900 flex-1">
+      <div className="border flex-1">
 
       </div>
     </div>
