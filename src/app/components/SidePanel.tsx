@@ -53,7 +53,7 @@ const tabsOptions = [
 export default function SidePanel() {
 
     return (
-        <div className="flex flex-col gap-4 py-2 px-4 pb-6 h-full border-r border-gray-200">
+        <div className="flex flex-col gap-4 py-2 px-4 pb-6 h-full border-r-1 bg-white">
             <div className="flex gap-2 items-center">
                 <div className="border-transparent bg-green-700 rounded-xl w-7 h-7"></div>
                 <div className="flex flex-col justify-center text-sm">

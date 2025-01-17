@@ -5,14 +5,14 @@ interface GroupsTableProps {
     groupData: GroupData[];
 }
 
+export const clientLabel = "text-orange-500 bg-orange-100";
+export const demoLabel = "text-blue-600 bg-blue-50";
 
 
 export default function GroupsTable({ groupData }: GroupsTableProps) {
 
     console.log(groupData, "groupDatagroupData")
 
-    const clientLabel = "text-orange-500 bg-orange-100";
-    const demoLabel = "text-blue-600 bg-blue-100";
 
     return (
         <div className="h-full border flex flex-col">
@@ -36,7 +36,7 @@ export default function GroupsTable({ groupData }: GroupsTableProps) {
                 </div>
             </div>
 
-            <div className="flex-1 border table-container relative overflow-y-scroll [&::-webkit-scrollbar]:w-2
+            <div className="flex-1 table-container relative overflow-y-scroll [&::-webkit-scrollbar]:w-2
   [&::-webkit-scrollbar-track]:bg-white
   [&::-webkit-scrollbar-thumb]:bg-gray-300
   [&::-webkit-scrollbar-thumb]:rounded-full">
@@ -45,7 +45,7 @@ export default function GroupsTable({ groupData }: GroupsTableProps) {
                     <thead className="bg-none border-b sticky top-0 z-10">
                         <tr className="text-left text-gray-500 text-sm bg-none">
                             <th className="top-0 p-2 bg-gray-50">
-                                <input type="checkbox" className="rounded" />
+                                <input type="checkbox" className="rounded text-green-600 bg-gray-100 focus:ring-green-500 dark:focus:ring-green-600" />
                             </th>
                             <th className="top-0 p-2 bg-gray-50 font-semibold">Group Name</th>
                             <th className="top-0 p-2 bg-gray-50 font-semibold">Project</th>
@@ -54,7 +54,6 @@ export default function GroupsTable({ groupData }: GroupsTableProps) {
                             <th className="top-0 p-2 bg-gray-50 font-semibold">Last Active</th>
                         </tr>
                     </thead>
-
 
                     <tbody className="bg-white">
                         {groupData.length && groupData.map((row, index) => (
