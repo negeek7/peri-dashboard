@@ -4,7 +4,7 @@ import { BellAlertIcon } from '@heroicons/react/24/outline';
 import React from 'react';
 
 
-export default function NavBar(){
+export default function InfoBar(){
 
     return (
         <div className="border flex flex-row justify-between py-1 px-4 items-center h-12 border-b border-gray-200">

@@ -1,6 +1,6 @@
 import { ChartBarIcon } from '@heroicons/react/16/solid';
 import { ArrowLeftStartOnRectangleIcon } from '@heroicons/react/20/solid';
-import { ArrowPathIcon, ArrowUpOnSquareIcon, CalendarDateRangeIcon, CircleStackIcon, ExclamationCircleIcon } from '@heroicons/react/24/outline';
+import { ArrowPathIcon, ArrowUpOnSquareIcon, CalendarDateRangeIcon, ExclamationCircleIcon } from '@heroicons/react/24/outline';
 import React from 'react';
 import { GroupData } from '../page';
 import { clientLabel, demoLabel } from './GroupsTable';

@@ -11,9 +11,6 @@ export const demoLabel = "text-blue-600 bg-blue-50";
 
 export default function GroupsTable({ groupData }: GroupsTableProps) {
 
-    console.log(groupData, "groupDatagroupData")
-
-
     return (
         <div className="h-full border flex flex-col">
 
@@ -76,7 +73,7 @@ export default function GroupsTable({ groupData }: GroupsTableProps) {
                                 <td className="px-2 py-3 flex flex-row gap-2">
                                     {
                                         row.labels && row.labels.slice(0, 2).map((label, index) => (
-                                            <div className="flex space-x-1">
+                                            <div key={index} className="flex space-x-1">
                                                 <span className="border rounded-xl py-1 px-2 w-14 truncate text-xs text-gray-500 capitalize">
                                                     {label}
                                                 </span>

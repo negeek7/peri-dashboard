@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
 import "./globals.css";
 import SidePanel from "./components/SidePanel";
-import NavBar from "./components/Navbar";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import InfoBar from "./components/InfoBar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,7 +22,7 @@ export default function RootLayout({
 
           {/* Main Content */}
           <div className="flex-1 flex flex-col">
-            <NavBar  />
+            <InfoBar  />
             <main className="flex-1 overflow-hidden">{children}</main>
           </div>
         </div>

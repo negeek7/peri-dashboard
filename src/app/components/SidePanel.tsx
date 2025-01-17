@@ -1,6 +1,5 @@
 import React from 'react';
-import Icon from './Icon';
-import { HomeIcon, ChatBubbleBottomCenterIcon, UserIcon, UserGroupIcon, DocumentTextIcon, BellAlertIcon, DocumentIcon, Cog6ToothIcon } from '@heroicons/react/16/solid';
+import { HomeIcon, ChatBubbleBottomCenterIcon, UserGroupIcon, DocumentTextIcon, BellAlertIcon, DocumentIcon, Cog6ToothIcon } from '@heroicons/react/16/solid';
 import { ChatBubbleOvalLeftEllipsisIcon } from '@heroicons/react/24/outline';
 
 
@@ -15,37 +14,37 @@ const tabsOptions = [
         value: 'Chats',
         iconSrc: 'chats.svg',
         icon: ChatBubbleBottomCenterIcon,
-        iconAlt: "Icon"
+        iconAlt: "Chat Icon"
     },
     {
         value: 'Groups',
         iconSrc: 'users.svg',
         icon: UserGroupIcon,
-        iconAlt: "Icon"
+        iconAlt: "User Icon"
     },
     {
         value: 'Contacts',
         iconSrc: 'contacts.svg',
         icon: DocumentTextIcon,
-        iconAlt: "Icon"
+        iconAlt: "Contacts Icon"
     },
     {
         value: 'Logs',
         iconSrc: 'bell.svg',
         icon: BellAlertIcon,
-        iconAlt: "Icon"
+        iconAlt: "Logs Icon"
     },
     {
         value: 'Files',
         iconSrc: 'file.svg',
         icon: DocumentIcon,
-        iconAlt: "Icon"
+        iconAlt: "Files Icon"
     },
     {
         value: 'Settings',
         iconSrc: 'settings.svg',
         icon: Cog6ToothIcon,
-        iconAlt: "Icon"
+        iconAlt: "Settings Icon"
     }
 ]
 
