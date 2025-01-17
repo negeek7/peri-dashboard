@@ -1,6 +1,7 @@
 import React from 'react';
 import Icon from './Icon';
 import { HomeIcon, ChatBubbleBottomCenterIcon, UserIcon, UserGroupIcon, DocumentTextIcon, BellAlertIcon, DocumentIcon, Cog6ToothIcon } from '@heroicons/react/16/solid';
+import { ChatBubbleOvalLeftEllipsisIcon } from '@heroicons/react/24/outline';
 
 
 const tabsOptions = [
@@ -64,7 +65,7 @@ export default function SidePanel() {
             <div className="flex flex-col gap-2 font-medium font-sans">
                 {
                     tabsOptions.map((tab, index) => (
-                        <div key={index} className="flex flex-row gap-4 items-center border-transparent p-2 group cursor-pointer hover:bg-gray-200 rounded-lg">
+                        <div key={index} className="flex flex-row gap-4 items-center border-transparent p-2 group cursor-pointer hover:bg-gray-200 rounded-lg text-gray-600">
                             {
                                 tab.icon && <tab.icon style={{ width: 18, height: 18 }} className="group-hover:text-green-600" />
                             }
@@ -73,7 +74,10 @@ export default function SidePanel() {
                     ))
                 }
             </div>
-            <p className="mt-auto font-semibold">Help & Support</p>
+            <div className="mt-auto font-semibold flex gap-2 items-center">
+                <ChatBubbleOvalLeftEllipsisIcon style={{width: 18, height: 18, color: "green"}}/>
+                <span className="text-gray-600 text-sm">Help & Support</span>
+            </div>
         </div>
     )
 }

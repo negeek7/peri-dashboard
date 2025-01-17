@@ -16,7 +16,7 @@ export default async function Home() {
 
   const { data: groups, error } = await supabase
     .from('groups')
-    .select()
+    .select().order('group_name', { ascending: true });
 
   if (error) {
     throw new Error("Supabase could not fetch data");
