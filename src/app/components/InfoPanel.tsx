@@ -41,7 +41,7 @@ export default function InfoPanel({ group }: GroupInfo) {
             </div>
 
             <div className="space-y-4 border-b px-4">
-                <div className="w-5/6 flex flex-col gap-2 text-sm mb-8">
+                <div className="w-5/6 flex flex-col gap-4 text-sm mb-8">
                     <div className="flex justify-between items-center">
                         <span className="text-gray-500">Last Active</span>
                         <span className="text-gray-700">{group.last_active}</span>
