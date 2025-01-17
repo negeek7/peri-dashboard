@@ -1,3 +1,4 @@
+import { ChevronUpDownIcon } from "@heroicons/react/24/outline";
 import { GroupData } from "../page";
 
 interface GroupsTableProps {
@@ -20,7 +21,10 @@ export default function GroupsTable({ groupData }: GroupsTableProps) {
 
                     <div className="flex flex-row gap-4 border-transparent">
                         <button className="text-white bg-green-700 rounded px-4 text-sm shadow-sm">Bulk Message</button>
-                        <button className="text-gray-600 rounded px-2 py-1 shadow-sm text-sm">Group Actions</button>
+                        <button className="text-gray-600 rounded px-2 py-1 shadow-sm text-sm border bg-white flex flex-row items-center gap-1">
+                            <span>Group Actions</span>
+                            <ChevronUpDownIcon style={{width: 14, height: 14}}/>
+                        </button>
                     </div>
 
 
@@ -31,18 +35,18 @@ export default function GroupsTable({ groupData }: GroupsTableProps) {
   [&::-webkit-scrollbar-track]:bg-white
   [&::-webkit-scrollbar-thumb]:bg-gray-300
   [&::-webkit-scrollbar-thumb]:rounded-full">
-                <table className="w-full relative">
+                <table className="w-full relative bg-white">
                     {/* Table Header */}
-                    <thead className="bg-white border-b sticky top-0 z-10">
-                        <tr className="text-left text-gray-500 text-sm">
-                            <th className="top-0 p-4 bg-gray-50">
+                    <thead className="bg-none border-b sticky top-0 z-10">
+                        <tr className="text-left text-gray-500 text-sm bg-none">
+                            <th className="top-0 p-2 bg-gray-50">
                                 <input type="checkbox" className="rounded" />
                             </th>
-                            <th className="top-0 p-4 bg-gray-50 font-semibold">Group Name</th>
-                            <th className="top-0 p-4 bg-gray-50 font-semibold">Project</th>
-                            <th className="top-0 p-4 bg-gray-50 font-semibold">Labels</th>
-                            <th className="top-0 p-4 bg-gray-50 font-semibold">Members</th>
-                            <th className="top-0 p-4 bg-gray-50 font-semibold">Last Active</th>
+                            <th className="top-0 p-2 bg-gray-50 font-semibold">Group Name</th>
+                            <th className="top-0 p-2 bg-gray-50 font-semibold">Project</th>
+                            <th className="top-0 p-2 bg-gray-50 font-semibold">Labels</th>
+                            <th className="top-0 p-2 bg-gray-50 font-semibold">Members</th>
+                            <th className="top-0 p-2 bg-gray-50 font-semibold">Last Active</th>
                         </tr>
                     </thead>
 
@@ -50,22 +54,22 @@ export default function GroupsTable({ groupData }: GroupsTableProps) {
                     <tbody className="bg-white">
                         {groupData.length && groupData.map((row, index) => (
                             <tr key={index} className="hover:bg-gray-100 text-gray-600 text-sm font-medium cursor-pointer">
-                                <td className="px-4 py-3">
+                                <td className="px-2 py-3">
                                     <input type="checkbox" className="rounded" />
                                 </td>
-                                <td className="px-4 py-3">
+                                <td className="px-2 py-3">
                                     <div className="flex items-center space-x-2">
                                         {/* <div className="w-8 h-8 bg-gray-200 rounded-full"></div> */}
                                         <span>{row.group_name}</span>
                                         <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                                     </div>
                                 </td>
-                                <td className="px-4 py-3">
+                                <td className="px-2 py-3">
                                     <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
                                         {row.project_type}
                                     </span>
                                 </td>
-                                <td className="px-4 py-3 flex flex-row gap-2">
+                                <td className="px-2 py-3 flex flex-row gap-2">
                                     {
                                         row.labels !== null && row.labels.map(label => (
                                             <div className="flex space-x-1">
@@ -76,8 +80,8 @@ export default function GroupsTable({ groupData }: GroupsTableProps) {
                                         ))
                                     }
                                 </td>
-                                <td className="px-4 py-3">{row.members}</td>
-                                <td className="px-4 py-3 text-gray-500">{row.last_active}</td>
+                                <td className="px-2 py-3 text-left">{row.members}</td>
+                                <td className="px-2 py-3 text-gray-500">{row.last_active}</td>
                             </tr>
                         ))}
                     </tbody>

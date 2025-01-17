@@ -1,3 +1,6 @@
+import { ChartBarIcon } from '@heroicons/react/16/solid';
+import { ArrowLeftStartOnRectangleIcon } from '@heroicons/react/20/solid';
+import { ArrowUpOnSquareIcon, CalendarDateRangeIcon, CircleStackIcon, ExclamationCircleIcon } from '@heroicons/react/24/outline';
 import React from 'react';
 
 export default function InfoPanel({ group }: any) {
@@ -68,32 +71,40 @@ export default function InfoPanel({ group }: any) {
             </div>
 
             <div className="mt-8 space-y-3 px-4">
-                <button className="w-full text-left text-gray-600 hover:text-gray-800">
-                    Export Chat
+                <button className="w-full flex flex-row gap-1 items-center text-sm text-left text-gray-600 hover:text-gray-800">
+                    <ArrowUpOnSquareIcon style={{width: 16, height: 16}}/>
+                    <span>Export Chat</span>
                 </button>
-                <button className="w-full text-left text-red-500 hover:text-red-600">
-                    Exit Group
+                <button className="w-full flex flex-row gap-1 items-center text-sm text-left text-red-500 hover:text-red-600">
+                    <ArrowLeftStartOnRectangleIcon style={{width: 16, height: 16}}/>
+                    <span>Exit Group</span>
                 </button>
             </div>
 
             <div className="mx-4 mt-6 p-4 border rounded-lg shadow-xl">
                 <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center space-x-2">
-                        <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-                        <span className="font-medium">PER-011 | Evoke ⟷ Skope</span>
+                    <div className="flex items-center space-x-2 text-gray-500 text-xs">
+                        <span className="font-medium tracking-wide">PER-011 | Evoke ⟷ Skope</span>
                     </div>
-                    <span className="bg-gray-100 text-xs px-2 py-1 rounded-full">H</span>
+                    <span className="bg-blue-700 text-xs text-white px-2 py-1 rounded-full">H</span>
                 </div>
-                <p className="text-red-500 font-medium mb-2">
-                    Issues with mentions on groups
-                </p>
-                <div className="flex items-center text-sm text-gray-500">
-                    <span className="mr-4">Dec 22</span>
-                    <span className="flex items-center">
-                        <span className="w-2 h-2 bg-gray-400 rounded-full mr-1"></span>
-                        client
-                    </span>
-                    <span className="ml-auto">3 days</span>
+                <div className="flex flex-row gap-1 items-center font-medium mb-2 text-black text-sm">
+                    <ExclamationCircleIcon style={{height: 16, width: 16, color: "red"}} />
+                    <span>Issues with mentions on groups</span>
+                </div>
+                <div className="flex items-center text-sm text-gray-500 justify-between">
+                    <div className="flex flex-row gap-2 items-center">
+                        <span className="p-1 border rounded-md"><ChartBarIcon style={{height: 12, width: 12}}/></span>
+                        <div className="p-1 border flex flex-row gap-1 items-center rounded-md text-xs px-2 text-gray-500">
+                            <CalendarDateRangeIcon style={{width: 14, height: 14, color: "orange"}}/>
+                            <span>Dec 22</span>
+                        </div>
+                        <div className="p-1 border flex flex-row gap-1 items-center rounded-md text-xs px-2 text-gray-500">
+                            <span className="w-2 h-2 bg-black rounded-full mr-1"></span>
+                            <span>client</span>
+                        </div>
+                    </div>
+                    <span className="ml-auto text-gray-400 text-xs">3 days</span>
                 </div>
             </div>
         </div>
