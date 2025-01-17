@@ -8,7 +8,6 @@ interface GroupsTableProps {
 export const clientLabel = "text-orange-500 bg-orange-100";
 export const demoLabel = "text-blue-600 bg-blue-50";
 
-
 export default function GroupsTable({ groupData }: GroupsTableProps) {
 
     return (

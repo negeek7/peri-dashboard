@@ -10,8 +10,6 @@ interface GroupInfo {
 }
 
 export default function InfoPanel({ group }: GroupInfo) {
-
-
     return (
         <div className=" bg-white py-4 border-r h-full">
             <div className="flex items-center justify-between mb-6 px-4">
@@ -21,7 +19,7 @@ export default function InfoPanel({ group }: GroupInfo) {
                     <h2 className="text-md font-semibold w-44 text-gray-600 truncate overflow-hidden">{group.group_name}</h2>
                 </div>
                 <button className="text-xs text-gray-400 hover:text-gray-600 cursor-pointer flex gap-2   items-center">
-                    <ArrowPathIcon style={{width: 14, height: 14}}/>
+                    <ArrowPathIcon style={{ width: 14, height: 14 }} />
                     <span>Refresh</span>
                 </button>
             </div>
@@ -63,9 +61,9 @@ export default function InfoPanel({ group }: GroupInfo) {
 
                     <div className="flex justify-between items-center">
                         <span className="text-gray-500">Project</span>
-                            <span className={`${group.project_type.toLowerCase() == "clients" ? clientLabel : demoLabel} rounded-lg py-1 px-2 text-xs font-medium`}>
-                                # {group.project_type}
-                            </span>
+                        <span className={`${group.project_type.toLowerCase() == "clients" ? clientLabel : demoLabel} rounded-lg py-1 px-2 text-xs font-medium`}>
+                            # {group.project_type}
+                        </span>
                     </div>
 
                     <div className="space-y-2 flex flex-row justify-between items-start">

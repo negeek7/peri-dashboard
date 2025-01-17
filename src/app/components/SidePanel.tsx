@@ -2,7 +2,6 @@ import React from 'react';
 import { HomeIcon, ChatBubbleBottomCenterIcon, UserGroupIcon, DocumentTextIcon, BellAlertIcon, DocumentIcon, Cog6ToothIcon } from '@heroicons/react/16/solid';
 import { ChatBubbleOvalLeftEllipsisIcon } from '@heroicons/react/24/outline';
 
-
 const tabsOptions = [
     {
         value: 'Dashboard',
@@ -48,7 +47,6 @@ const tabsOptions = [
     }
 ]
 
-
 export default function SidePanel() {
 
     return (
@@ -74,7 +72,7 @@ export default function SidePanel() {
                 }
             </div>
             <div className="mt-auto font-semibold flex gap-2 items-center">
-                <ChatBubbleOvalLeftEllipsisIcon style={{width: 18, height: 18, color: "green"}}/>
+                <ChatBubbleOvalLeftEllipsisIcon style={{ width: 18, height: 18, color: "green" }} />
                 <span className="text-gray-600 text-sm">Help & Support</span>
             </div>
         </div>

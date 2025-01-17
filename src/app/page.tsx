@@ -2,8 +2,6 @@ import GroupsTable from "./components/GroupsTable";
 import { supabase } from "@/utils/supabase/supabaseClient";
 import InfoPanel from "./components/InfoPanel";
 
-// Main screen (show only groups table for now);
-
 export interface GroupData {
   group_name: string,
   project_type: string,
@@ -12,6 +10,7 @@ export interface GroupData {
   last_active: string,
 }
 
+// Main screen (show only groups table for now);
 export default async function Home() {
   const { data: groups, error } = await supabase
     .from('groups')
